@@ -1,0 +1,51 @@
+{
+  "release": "1.0.0",
+  "framework": "xgboost==3.2.0",
+  "license": "Apache-2.0",
+  "intended_use": "research and software demonstration only",
+  "training_data": "private pediatric liver transplantation follow-up data; not distributed",
+  "prediction_horizons": ["1m", "1y", "5y"],
+  "feature_contract": {
+    "static_features": 142,
+    "temporal_features": 88,
+    "max_sequence_length": 256,
+    "flattened_feature_count": 22927
+  },
+  "schema": {
+    "path": "datasets/schema.json",
+    "sha256": "86af92e80a567645993bab4680a627d57b28676b567278b6ad6b3cbf3c74fc70",
+    "placeholder": false
+  },
+  "models": [
+    {
+      "target": "Label_1m",
+      "file_name": "xgb_sequence_Label_1m.json",
+      "file_size_bytes": 593604,
+      "sha256": "4d1e021d7f178518b8b5470af2a81f8fa3abadb246cc13ab4e8d928fba8e0cd9",
+      "objective": "binary:logistic",
+      "feature_count": 22927,
+      "boosted_rounds": 300,
+      "delivery_validation_auroc": 0.9251573870613485
+    },
+    {
+      "target": "Label_1y",
+      "file_name": "xgb_sequence_Label_1y.json",
+      "file_size_bytes": 548368,
+      "sha256": "f6e82be2fa0e7ad61ca1eda9165cfb363171918b089877fb1a90f974f9fe0b4f",
+      "objective": "binary:logistic",
+      "feature_count": 22927,
+      "boosted_rounds": 300,
+      "delivery_validation_auroc": 0.8183464615663243
+    },
+    {
+      "target": "Label_5y",
+      "file_name": "xgb_sequence_Label_5y.json",
+      "file_size_bytes": 543732,
+      "sha256": "bf0fb72844975a4b802fcabdb2c0e2db01ebe4077b393708a8c03711d9342863",
+      "objective": "binary:logistic",
+      "feature_count": 22927,
+      "boosted_rounds": 300,
+      "delivery_validation_auroc": 0.7804409429007249
+    }
+  ]
+}

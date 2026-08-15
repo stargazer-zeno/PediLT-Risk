@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Runtime data
+.env
+.env.backup.*
+.env.profiles/*.env
+!.env.profiles/*.env.example
+data/
+*.log
+
+# The validated schema and XGBoost models are intentionally versioned.
+# Never add training datasets or patient-level model outputs here.
+artifacts/private/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

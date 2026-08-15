@@ -1,0 +1,16 @@
+# GRPO training configuration.
+epochs: 1
+learning_rate: 0.000005
+temperature: 0.9
+num_generations: 8
+max_completion_length: 128
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+bf16: true
+seed: 42
+epsilon: 0.2
+beta: 0.04
+reward:
+  format_weight: 1
+  brier_complement_weight: 2
+  invalid_penalty_weight: 1

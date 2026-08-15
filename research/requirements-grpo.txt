@@ -1,0 +1,6 @@
+# Optional; install after requirements.txt when GRPO is needed.
+datasets
+transformers
+trl
+peft
+accelerate

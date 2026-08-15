@@ -1,0 +1,41 @@
+# Private clinical inputs and generated training artifacts
+data/
+private_inputs/
+artifacts/
+checkpoints/
+merged_models/
+machine_learning/train/datasets/*
+machine_learning/train/xgboost/*.json
+machine_learning/train/xgboost/*.csv
+machine_learning/train/xgboost/*.txt
+machine_learning/train/lstm/*.pt
+machine_learning/train/lstm/*.json
+machine_learning/train/lstm/*.csv
+machine_learning/train/lstm/*.txt
+machine_learning/train/rsf/*.joblib
+machine_learning/train/rsf/*.json
+machine_learning/train/rsf/*.csv
+machine_learning/train/rsf/*.txt
+*.jsonl
+*.log
+*.pt
+*.joblib
+*.safetensors
+*.ckpt
+.env
+
+# Python/build noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Keep synthetic public examples even when binary arrays are present there.
+!llm/examples/
+!llm/examples/**
+!machine_learning/examples/
+!machine_learning/examples/**
+
+# Re-apply generated-file exclusions after the public-example exceptions.
+**/__pycache__/
+*.py[cod]

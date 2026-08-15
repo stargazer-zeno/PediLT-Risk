@@ -1,0 +1,3 @@
+# Optional GPU/runtime dependencies for the LLM workflows.
+ms-swift
+vllm

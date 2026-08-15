@@ -1,0 +1,859 @@
+{
+  "repo_root": "private-research-environment-not-distributed",
+  "source_train_json": "private-clinical-data-not-distributed",
+  "source_test_json": "private-clinical-data-not-distributed",
+  "continuous_base_cols": [
+    "手术年龄",
+    "患儿术时体重",
+    "供肝重量",
+    "GRWR",
+    "供体年龄"
+  ],
+  "categorical_base_values": {
+    "ABO血型相容性": [
+      "不相容",
+      "相同",
+      "相容"
+    ],
+    "主要诊断分类": [
+      "肝功能衰竭类",
+      "肝硬化类疾病",
+      "肝肿瘤类疾病",
+      "胆汁淤积类疾病",
+      "胆道类疾病",
+      "遗传代谢类疾病（不合并肝损）",
+      "遗传代谢类疾病（合并肝损）",
+      "门静脉类疾病"
+    ],
+    "供体CYP": [
+      "1/1",
+      "1/3",
+      "3/3"
+    ],
+    "供体血型": [
+      "A",
+      "AB",
+      "B",
+      "O"
+    ],
+    "患儿CYP": [
+      "1/1",
+      "1/3",
+      "3/3"
+    ],
+    "患儿血型": [
+      "A",
+      "AB",
+      "B",
+      "O"
+    ],
+    "手术史": [
+      "先心病术后",
+      "肝切除术后",
+      "肝移植术后",
+      "葛西术后"
+    ],
+    "术式": [
+      "全肝",
+      "劈离",
+      "活体"
+    ],
+    "诊断1": [
+      "22号染色体缺如",
+      "Alagille综合征",
+      "Budd-Chiari综合症",
+      "Caroli病",
+      "x连锁丙种球蛋白缺乏症",
+      "α1抗胰蛋白酶缺乏症",
+      "丙酸血症",
+      "二次肝移植",
+      "先天性肝内门体分流症",
+      "先天性肝纤维化",
+      "先天性胆汁酸合成障碍",
+      "先天性胆管畸形",
+      "先天性高胆红素血症[Crigler-Najjar综合征]",
+      "原发性高草酸尿1型",
+      "婴肝综合症",
+      "家族性肝内胆汁淤积症",
+      "家族性肝内胆汁淤积症1型",
+      "尼曼-皮克病",
+      "急性肝功能衰竭",
+      "慢加急性肝功能衰竭",
+      "新生儿血色病可能",
+      "朗格汉斯组织细胞增多症",
+      "朗格汉斯组织细胞增生症",
+      "枫糖尿病",
+      "毛细血管扩张症",
+      "氨甲酰磷酸合成酶1缺乏症",
+      "瓜氨酸血症",
+      "甲基丙二酸血症",
+      "硬化性胆管炎",
+      "端粒缺陷综合征",
+      "精氨基琥珀酸尿症",
+      "精氨酸血症",
+      "糖原贮积症",
+      "糖原贮积症Ⅰ型",
+      "糖原贮积症Ⅲ型",
+      "纯合子家族性高胆固醇血症",
+      "线粒体病",
+      "肝内门脉闭锁",
+      "肝功能衰竭",
+      "肝母细胞瘤",
+      "肝硬化",
+      "肝纤维化",
+      "肝细胞癌",
+      "肝血管内皮瘤",
+      "肝豆状核变性(Wilson病)",
+      "肝豆状核变性(wilson病)",
+      "肝门血管畸形",
+      "胆固醇酯贮积症（LIPA突变）",
+      "胆总管囊肿",
+      "胆汁反流",
+      "胆汁淤积",
+      "胆道发育不良",
+      "胆道蛔虫病",
+      "胆道闭锁",
+      "药物性肝损伤",
+      "蛋氨酸血症",
+      "遗传性蛋白C缺陷症",
+      "错构瘤切除术后",
+      "门体静脉分流",
+      "门静脉海绵样变",
+      "门静脉病变",
+      "门静脉连接异常",
+      "门静脉高压",
+      "高氨血症",
+      "高酪氨酸血症1型",
+      "高鸟胺酸血症-高氨血症-高瓜胺酸血症候群",
+      "鸟氨酸氨甲酰基转移酶缺乏症"
+    ],
+    "诊断2": [
+      "Alagille综合征",
+      "Caroli病",
+      "丙种球蛋白缺乏症",
+      "二次肝移植",
+      "先天性高胆红素血症[Crigler-Najjar综合征]",
+      "右半肝切除术后",
+      "多囊肾",
+      "急性肝功能衰竭",
+      "朗格汉斯组织细胞增多症",
+      "消化道出血",
+      "甲基丙二酸血症",
+      "精氨基琥珀酸尿症",
+      "纯合子家族性高胆固醇血症",
+      "肝功能衰竭",
+      "肝母细胞瘤",
+      "肝硬化",
+      "肝硬化失代偿",
+      "肝肺综合征",
+      "肝错构瘤",
+      "肺动脉高压",
+      "肿瘤复发",
+      "胆总管囊肿",
+      "胆汁淤积",
+      "胆道闭锁",
+      "脾功能亢进",
+      "自身免疫性肝病",
+      "药物性肝损伤",
+      "葛西术后",
+      "门静脉海绵样变",
+      "门静脉高压",
+      "高酪氨酸血症1型"
+    ],
+    "诊断3": [
+      "先心病术后",
+      "消化道出血",
+      "肝硬化失代偿",
+      "脾功能亢进",
+      "门静脉高压"
+    ]
+  },
+  "static_feature_names": [
+    "Base_手术年龄",
+    "Base_患儿术时体重",
+    "Base_供肝重量",
+    "Base_GRWR",
+    "Base_供体年龄",
+    "Base_患儿性别_男1女0",
+    "Base_供体性别_男1女0",
+    "Cat_ABO血型相容性_不相容",
+    "Cat_ABO血型相容性_相同",
+    "Cat_ABO血型相容性_相容",
+    "Cat_主要诊断分类_肝功能衰竭类",
+    "Cat_主要诊断分类_肝硬化类疾病",
+    "Cat_主要诊断分类_肝肿瘤类疾病",
+    "Cat_主要诊断分类_胆汁淤积类疾病",
+    "Cat_主要诊断分类_胆道类疾病",
+    "Cat_主要诊断分类_遗传代谢类疾病（不合并肝损）",
+    "Cat_主要诊断分类_遗传代谢类疾病（合并肝损）",
+    "Cat_主要诊断分类_门静脉类疾病",
+    "Cat_供体CYP_1/1",
+    "Cat_供体CYP_1/3",
+    "Cat_供体CYP_3/3",
+    "Cat_供体血型_A",
+    "Cat_供体血型_AB",
+    "Cat_供体血型_B",
+    "Cat_供体血型_O",
+    "Cat_患儿CYP_1/1",
+    "Cat_患儿CYP_1/3",
+    "Cat_患儿CYP_3/3",
+    "Cat_患儿血型_A",
+    "Cat_患儿血型_AB",
+    "Cat_患儿血型_B",
+    "Cat_患儿血型_O",
+    "Cat_手术史_先心病术后",
+    "Cat_手术史_肝切除术后",
+    "Cat_手术史_肝移植术后",
+    "Cat_手术史_葛西术后",
+    "Cat_术式_全肝",
+    "Cat_术式_劈离",
+    "Cat_术式_活体",
+    "Cat_诊断1_22号染色体缺如",
+    "Cat_诊断1_Alagille综合征",
+    "Cat_诊断1_Budd-Chiari综合症",
+    "Cat_诊断1_Caroli病",
+    "Cat_诊断1_x连锁丙种球蛋白缺乏症",
+    "Cat_诊断1_α1抗胰蛋白酶缺乏症",
+    "Cat_诊断1_丙酸血症",
+    "Cat_诊断1_二次肝移植",
+    "Cat_诊断1_先天性肝内门体分流症",
+    "Cat_诊断1_先天性肝纤维化",
+    "Cat_诊断1_先天性胆汁酸合成障碍",
+    "Cat_诊断1_先天性胆管畸形",
+    "Cat_诊断1_先天性高胆红素血症[Crigler-Najjar综合征]",
+    "Cat_诊断1_原发性高草酸尿1型",
+    "Cat_诊断1_婴肝综合症",
+    "Cat_诊断1_家族性肝内胆汁淤积症",
+    "Cat_诊断1_家族性肝内胆汁淤积症1型",
+    "Cat_诊断1_尼曼-皮克病",
+    "Cat_诊断1_急性肝功能衰竭",
+    "Cat_诊断1_慢加急性肝功能衰竭",
+    "Cat_诊断1_新生儿血色病可能",
+    "Cat_诊断1_朗格汉斯组织细胞增多症",
+    "Cat_诊断1_朗格汉斯组织细胞增生症",
+    "Cat_诊断1_枫糖尿病",
+    "Cat_诊断1_毛细血管扩张症",
+    "Cat_诊断1_氨甲酰磷酸合成酶1缺乏症",
+    "Cat_诊断1_瓜氨酸血症",
+    "Cat_诊断1_甲基丙二酸血症",
+    "Cat_诊断1_硬化性胆管炎",
+    "Cat_诊断1_端粒缺陷综合征",
+    "Cat_诊断1_精氨基琥珀酸尿症",
+    "Cat_诊断1_精氨酸血症",
+    "Cat_诊断1_糖原贮积症",
+    "Cat_诊断1_糖原贮积症Ⅰ型",
+    "Cat_诊断1_糖原贮积症Ⅲ型",
+    "Cat_诊断1_纯合子家族性高胆固醇血症",
+    "Cat_诊断1_线粒体病",
+    "Cat_诊断1_肝内门脉闭锁",
+    "Cat_诊断1_肝功能衰竭",
+    "Cat_诊断1_肝母细胞瘤",
+    "Cat_诊断1_肝硬化",
+    "Cat_诊断1_肝纤维化",
+    "Cat_诊断1_肝细胞癌",
+    "Cat_诊断1_肝血管内皮瘤",
+    "Cat_诊断1_肝豆状核变性(Wilson病)",
+    "Cat_诊断1_肝豆状核变性(wilson病)",
+    "Cat_诊断1_肝门血管畸形",
+    "Cat_诊断1_胆固醇酯贮积症（LIPA突变）",
+    "Cat_诊断1_胆总管囊肿",
+    "Cat_诊断1_胆汁反流",
+    "Cat_诊断1_胆汁淤积",
+    "Cat_诊断1_胆道发育不良",
+    "Cat_诊断1_胆道蛔虫病",
+    "Cat_诊断1_胆道闭锁",
+    "Cat_诊断1_药物性肝损伤",
+    "Cat_诊断1_蛋氨酸血症",
+    "Cat_诊断1_遗传性蛋白C缺陷症",
+    "Cat_诊断1_错构瘤切除术后",
+    "Cat_诊断1_门体静脉分流",
+    "Cat_诊断1_门静脉海绵样变",
+    "Cat_诊断1_门静脉病变",
+    "Cat_诊断1_门静脉连接异常",
+    "Cat_诊断1_门静脉高压",
+    "Cat_诊断1_高氨血症",
+    "Cat_诊断1_高酪氨酸血症1型",
+    "Cat_诊断1_高鸟胺酸血症-高氨血症-高瓜胺酸血症候群",
+    "Cat_诊断1_鸟氨酸氨甲酰基转移酶缺乏症",
+    "Cat_诊断2_Alagille综合征",
+    "Cat_诊断2_Caroli病",
+    "Cat_诊断2_丙种球蛋白缺乏症",
+    "Cat_诊断2_二次肝移植",
+    "Cat_诊断2_先天性高胆红素血症[Crigler-Najjar综合征]",
+    "Cat_诊断2_右半肝切除术后",
+    "Cat_诊断2_多囊肾",
+    "Cat_诊断2_急性肝功能衰竭",
+    "Cat_诊断2_朗格汉斯组织细胞增多症",
+    "Cat_诊断2_消化道出血",
+    "Cat_诊断2_甲基丙二酸血症",
+    "Cat_诊断2_精氨基琥珀酸尿症",
+    "Cat_诊断2_纯合子家族性高胆固醇血症",
+    "Cat_诊断2_肝功能衰竭",
+    "Cat_诊断2_肝母细胞瘤",
+    "Cat_诊断2_肝硬化",
+    "Cat_诊断2_肝硬化失代偿",
+    "Cat_诊断2_肝肺综合征",
+    "Cat_诊断2_肝错构瘤",
+    "Cat_诊断2_肺动脉高压",
+    "Cat_诊断2_肿瘤复发",
+    "Cat_诊断2_胆总管囊肿",
+    "Cat_诊断2_胆汁淤积",
+    "Cat_诊断2_胆道闭锁",
+    "Cat_诊断2_脾功能亢进",
+    "Cat_诊断2_自身免疫性肝病",
+    "Cat_诊断2_药物性肝损伤",
+    "Cat_诊断2_葛西术后",
+    "Cat_诊断2_门静脉海绵样变",
+    "Cat_诊断2_门静脉高压",
+    "Cat_诊断2_高酪氨酸血症1型",
+    "Cat_诊断3_先心病术后",
+    "Cat_诊断3_消化道出血",
+    "Cat_诊断3_肝硬化失代偿",
+    "Cat_诊断3_脾功能亢进",
+    "Cat_诊断3_门静脉高压"
+  ],
+  "temporal_feature_specs": [
+    {
+      "type": "temporal_base",
+      "name": "体重",
+      "feature_name": "BaseSeq_体重"
+    },
+    {
+      "type": "temporal_base",
+      "name": "术后天数",
+      "feature_name": "BaseSeq_术后天数"
+    },
+    {
+      "type": "temporal_base",
+      "name": "身高",
+      "feature_name": "BaseSeq_身高"
+    },
+    {
+      "type": "lab",
+      "name": "ALB",
+      "feature_name": "LabSeq_ALB"
+    },
+    {
+      "type": "lab",
+      "name": "ALP",
+      "feature_name": "LabSeq_ALP"
+    },
+    {
+      "type": "lab",
+      "name": "ALT",
+      "feature_name": "LabSeq_ALT"
+    },
+    {
+      "type": "lab",
+      "name": "AST",
+      "feature_name": "LabSeq_AST"
+    },
+    {
+      "type": "lab",
+      "name": "CMV-DNA",
+      "feature_name": "LabSeq_CMV-DNA"
+    },
+    {
+      "type": "lab",
+      "name": "CR",
+      "feature_name": "LabSeq_CR"
+    },
+    {
+      "type": "lab",
+      "name": "DB",
+      "feature_name": "LabSeq_DB"
+    },
+    {
+      "type": "lab",
+      "name": "EBV-DNA",
+      "feature_name": "LabSeq_EBV-DNA"
+    },
+    {
+      "type": "lab",
+      "name": "HB",
+      "feature_name": "LabSeq_HB"
+    },
+    {
+      "type": "lab",
+      "name": "HBV-DNA",
+      "feature_name": "LabSeq_HBV-DNA"
+    },
+    {
+      "type": "lab",
+      "name": "HBcAb",
+      "feature_name": "LabSeq_HBcAb"
+    },
+    {
+      "type": "lab",
+      "name": "HBeAb",
+      "feature_name": "LabSeq_HBeAb"
+    },
+    {
+      "type": "lab",
+      "name": "HBeAg",
+      "feature_name": "LabSeq_HBeAg"
+    },
+    {
+      "type": "lab",
+      "name": "HBsAb",
+      "feature_name": "LabSeq_HBsAb"
+    },
+    {
+      "type": "lab",
+      "name": "HBsAg",
+      "feature_name": "LabSeq_HBsAg"
+    },
+    {
+      "type": "lab",
+      "name": "INR",
+      "feature_name": "LabSeq_INR"
+    },
+    {
+      "type": "lab",
+      "name": "N(%)",
+      "feature_name": "LabSeq_N(%)"
+    },
+    {
+      "type": "lab",
+      "name": "NT-proBNP",
+      "feature_name": "LabSeq_NT-proBNP"
+    },
+    {
+      "type": "lab",
+      "name": "PLT",
+      "feature_name": "LabSeq_PLT"
+    },
+    {
+      "type": "lab",
+      "name": "PT",
+      "feature_name": "LabSeq_PT"
+    },
+    {
+      "type": "lab",
+      "name": "TB",
+      "feature_name": "LabSeq_TB"
+    },
+    {
+      "type": "lab",
+      "name": "TP",
+      "feature_name": "LabSeq_TP"
+    },
+    {
+      "type": "lab",
+      "name": "WBC",
+      "feature_name": "LabSeq_WBC"
+    },
+    {
+      "type": "lab",
+      "name": "γ-GT",
+      "feature_name": "LabSeq_γ-GT"
+    },
+    {
+      "type": "lab",
+      "name": "免疫抑制剂浓度",
+      "feature_name": "LabSeq_免疫抑制剂浓度"
+    },
+    {
+      "type": "lab",
+      "name": "嗜酸性粒细胞百分比",
+      "feature_name": "LabSeq_嗜酸性粒细胞百分比"
+    },
+    {
+      "type": "lab",
+      "name": "尿酸",
+      "feature_name": "LabSeq_尿酸"
+    },
+    {
+      "type": "lab",
+      "name": "总胆固醇",
+      "feature_name": "LabSeq_总胆固醇"
+    },
+    {
+      "type": "lab",
+      "name": "淋巴细胞绝对值",
+      "feature_name": "LabSeq_淋巴细胞绝对值"
+    },
+    {
+      "type": "lab",
+      "name": "甘油三脂",
+      "feature_name": "LabSeq_甘油三脂"
+    },
+    {
+      "type": "lab",
+      "name": "胆汁酸",
+      "feature_name": "LabSeq_胆汁酸"
+    },
+    {
+      "type": "lab",
+      "name": "血氨",
+      "feature_name": "LabSeq_血氨"
+    },
+    {
+      "type": "lab",
+      "name": "血糖",
+      "feature_name": "LabSeq_血糖"
+    },
+    {
+      "type": "lab",
+      "name": "雷帕浓度",
+      "feature_name": "LabSeq_雷帕浓度"
+    },
+    {
+      "type": "med",
+      "name": "(乙10%)利伐沙班片(拜瑞妥)",
+      "feature_name": "MedSeq_(乙10%)利伐沙班片(拜瑞妥)"
+    },
+    {
+      "type": "med",
+      "name": "(乙10%)左乙拉西坦片",
+      "feature_name": "MedSeq_(乙10%)左乙拉西坦片"
+    },
+    {
+      "type": "med",
+      "name": "(乙10%)恩替卡韦分散片",
+      "feature_name": "MedSeq_(乙10%)恩替卡韦分散片"
+    },
+    {
+      "type": "med",
+      "name": "(乙20%)丁二磺酸腺苷蛋氨酸片(思美泰)",
+      "feature_name": "MedSeq_(乙20%)丁二磺酸腺苷蛋氨酸片(思美泰)"
+    },
+    {
+      "type": "med",
+      "name": "(甲)利可君片",
+      "feature_name": "MedSeq_(甲)利可君片"
+    },
+    {
+      "type": "med",
+      "name": "(甲)别嘌醇片",
+      "feature_name": "MedSeq_(甲)别嘌醇片"
+    },
+    {
+      "type": "med",
+      "name": "(甲)复方磺胺甲噁唑片",
+      "feature_name": "MedSeq_(甲)复方磺胺甲噁唑片"
+    },
+    {
+      "type": "med",
+      "name": "(甲)多烯磷脂酰胆碱胶囊(易善复)",
+      "feature_name": "MedSeq_(甲)多烯磷脂酰胆碱胶囊(易善复)"
+    },
+    {
+      "type": "med",
+      "name": "(甲)左甲状腺素钠片(优甲乐)",
+      "feature_name": "MedSeq_(甲)左甲状腺素钠片(优甲乐)"
+    },
+    {
+      "type": "med",
+      "name": "(甲)托拉塞米片（特苏敏）",
+      "feature_name": "MedSeq_(甲)托拉塞米片（特苏敏）"
+    },
+    {
+      "type": "med",
+      "name": "(甲)氯硝西泮片",
+      "feature_name": "MedSeq_(甲)氯硝西泮片"
+    },
+    {
+      "type": "med",
+      "name": "(甲)甲钴胺片(弥可保)",
+      "feature_name": "MedSeq_(甲)甲钴胺片(弥可保)"
+    },
+    {
+      "type": "med",
+      "name": "(甲)阿德福韦酯片",
+      "feature_name": "MedSeq_(甲)阿德福韦酯片"
+    },
+    {
+      "type": "med",
+      "name": "万赛维",
+      "feature_name": "MedSeq_万赛维"
+    },
+    {
+      "type": "med",
+      "name": "他克莫司(普乐可复)",
+      "feature_name": "MedSeq_他克莫司(普乐可复)"
+    },
+    {
+      "type": "med",
+      "name": "他克莫司(赛福开)",
+      "feature_name": "MedSeq_他克莫司(赛福开)"
+    },
+    {
+      "type": "med",
+      "name": "他克莫司缓释胶囊",
+      "feature_name": "MedSeq_他克莫司缓释胶囊"
+    },
+    {
+      "type": "med",
+      "name": "优思弗",
+      "feature_name": "MedSeq_优思弗"
+    },
+    {
+      "type": "med",
+      "name": "利可君",
+      "feature_name": "MedSeq_利可君"
+    },
+    {
+      "type": "med",
+      "name": "华法林",
+      "feature_name": "MedSeq_华法林"
+    },
+    {
+      "type": "med",
+      "name": "吗替麦考酚酯",
+      "feature_name": "MedSeq_吗替麦考酚酯"
+    },
+    {
+      "type": "med",
+      "name": "呋塞米片",
+      "feature_name": "MedSeq_呋塞米片"
+    },
+    {
+      "type": "med",
+      "name": "塞可平",
+      "feature_name": "MedSeq_塞可平"
+    },
+    {
+      "type": "med",
+      "name": "复方磺胺甲恶唑片",
+      "feature_name": "MedSeq_复方磺胺甲恶唑片"
+    },
+    {
+      "type": "med",
+      "name": "天晴甘平",
+      "feature_name": "MedSeq_天晴甘平"
+    },
+    {
+      "type": "med",
+      "name": "奥美拉唑肠溶胶囊",
+      "feature_name": "MedSeq_奥美拉唑肠溶胶囊"
+    },
+    {
+      "type": "med",
+      "name": "富马酸替诺福韦",
+      "feature_name": "MedSeq_富马酸替诺福韦"
+    },
+    {
+      "type": "med",
+      "name": "富马酸替诺福韦二吡呋酯片",
+      "feature_name": "MedSeq_富马酸替诺福韦二吡呋酯片"
+    },
+    {
+      "type": "med",
+      "name": "左乙拉西坦",
+      "feature_name": "MedSeq_左乙拉西坦"
+    },
+    {
+      "type": "med",
+      "name": "开浦兰",
+      "feature_name": "MedSeq_开浦兰"
+    },
+    {
+      "type": "med",
+      "name": "恩替卡韦",
+      "feature_name": "MedSeq_恩替卡韦"
+    },
+    {
+      "type": "med",
+      "name": "拉米夫定",
+      "feature_name": "MedSeq_拉米夫定"
+    },
+    {
+      "type": "med",
+      "name": "新山地明",
+      "feature_name": "MedSeq_新山地明"
+    },
+    {
+      "type": "med",
+      "name": "易善复",
+      "feature_name": "MedSeq_易善复"
+    },
+    {
+      "type": "med",
+      "name": "更昔洛韦",
+      "feature_name": "MedSeq_更昔洛韦"
+    },
+    {
+      "type": "med",
+      "name": "替格瑞洛片",
+      "feature_name": "MedSeq_替格瑞洛片"
+    },
+    {
+      "type": "med",
+      "name": "枸橼酸西地那非",
+      "feature_name": "MedSeq_枸橼酸西地那非"
+    },
+    {
+      "type": "med",
+      "name": "氟康唑胶囊",
+      "feature_name": "MedSeq_氟康唑胶囊"
+    },
+    {
+      "type": "med",
+      "name": "环孢素",
+      "feature_name": "MedSeq_环孢素"
+    },
+    {
+      "type": "med",
+      "name": "甲泼尼龙片",
+      "feature_name": "MedSeq_甲泼尼龙片"
+    },
+    {
+      "type": "med",
+      "name": "碳酸氢钠片",
+      "feature_name": "MedSeq_碳酸氢钠片"
+    },
+    {
+      "type": "med",
+      "name": "米芙",
+      "feature_name": "MedSeq_米芙"
+    },
+    {
+      "type": "med",
+      "name": "美卓乐",
+      "feature_name": "MedSeq_美卓乐"
+    },
+    {
+      "type": "med",
+      "name": "美能",
+      "feature_name": "MedSeq_美能"
+    },
+    {
+      "type": "med",
+      "name": "螺内酯片",
+      "feature_name": "MedSeq_螺内酯片"
+    },
+    {
+      "type": "med",
+      "name": "赛可平",
+      "feature_name": "MedSeq_赛可平"
+    },
+    {
+      "type": "med",
+      "name": "醋酸泼尼松",
+      "feature_name": "MedSeq_醋酸泼尼松"
+    },
+    {
+      "type": "med",
+      "name": "阿司匹林",
+      "feature_name": "MedSeq_阿司匹林"
+    },
+    {
+      "type": "med",
+      "name": "阿昔洛韦",
+      "feature_name": "MedSeq_阿昔洛韦"
+    },
+    {
+      "type": "med",
+      "name": "雷帕鸣",
+      "feature_name": "MedSeq_雷帕鸣"
+    },
+    {
+      "type": "med",
+      "name": "骁悉",
+      "feature_name": "MedSeq_骁悉"
+    }
+  ],
+  "temporal_feature_names": [
+    "BaseSeq_体重",
+    "BaseSeq_术后天数",
+    "BaseSeq_身高",
+    "LabSeq_ALB",
+    "LabSeq_ALP",
+    "LabSeq_ALT",
+    "LabSeq_AST",
+    "LabSeq_CMV-DNA",
+    "LabSeq_CR",
+    "LabSeq_DB",
+    "LabSeq_EBV-DNA",
+    "LabSeq_HB",
+    "LabSeq_HBV-DNA",
+    "LabSeq_HBcAb",
+    "LabSeq_HBeAb",
+    "LabSeq_HBeAg",
+    "LabSeq_HBsAb",
+    "LabSeq_HBsAg",
+    "LabSeq_INR",
+    "LabSeq_N(%)",
+    "LabSeq_NT-proBNP",
+    "LabSeq_PLT",
+    "LabSeq_PT",
+    "LabSeq_TB",
+    "LabSeq_TP",
+    "LabSeq_WBC",
+    "LabSeq_γ-GT",
+    "LabSeq_免疫抑制剂浓度",
+    "LabSeq_嗜酸性粒细胞百分比",
+    "LabSeq_尿酸",
+    "LabSeq_总胆固醇",
+    "LabSeq_淋巴细胞绝对值",
+    "LabSeq_甘油三脂",
+    "LabSeq_胆汁酸",
+    "LabSeq_血氨",
+    "LabSeq_血糖",
+    "LabSeq_雷帕浓度",
+    "MedSeq_(乙10%)利伐沙班片(拜瑞妥)",
+    "MedSeq_(乙10%)左乙拉西坦片",
+    "MedSeq_(乙10%)恩替卡韦分散片",
+    "MedSeq_(乙20%)丁二磺酸腺苷蛋氨酸片(思美泰)",
+    "MedSeq_(甲)利可君片",
+    "MedSeq_(甲)别嘌醇片",
+    "MedSeq_(甲)复方磺胺甲噁唑片",
+    "MedSeq_(甲)多烯磷脂酰胆碱胶囊(易善复)",
+    "MedSeq_(甲)左甲状腺素钠片(优甲乐)",
+    "MedSeq_(甲)托拉塞米片（特苏敏）",
+    "MedSeq_(甲)氯硝西泮片",
+    "MedSeq_(甲)甲钴胺片(弥可保)",
+    "MedSeq_(甲)阿德福韦酯片",
+    "MedSeq_万赛维",
+    "MedSeq_他克莫司(普乐可复)",
+    "MedSeq_他克莫司(赛福开)",
+    "MedSeq_他克莫司缓释胶囊",
+    "MedSeq_优思弗",
+    "MedSeq_利可君",
+    "MedSeq_华法林",
+    "MedSeq_吗替麦考酚酯",
+    "MedSeq_呋塞米片",
+    "MedSeq_塞可平",
+    "MedSeq_复方磺胺甲恶唑片",
+    "MedSeq_天晴甘平",
+    "MedSeq_奥美拉唑肠溶胶囊",
+    "MedSeq_富马酸替诺福韦",
+    "MedSeq_富马酸替诺福韦二吡呋酯片",
+    "MedSeq_左乙拉西坦",
+    "MedSeq_开浦兰",
+    "MedSeq_恩替卡韦",
+    "MedSeq_拉米夫定",
+    "MedSeq_新山地明",
+    "MedSeq_易善复",
+    "MedSeq_更昔洛韦",
+    "MedSeq_替格瑞洛片",
+    "MedSeq_枸橼酸西地那非",
+    "MedSeq_氟康唑胶囊",
+    "MedSeq_环孢素",
+    "MedSeq_甲泼尼龙片",
+    "MedSeq_碳酸氢钠片",
+    "MedSeq_米芙",
+    "MedSeq_美卓乐",
+    "MedSeq_美能",
+    "MedSeq_螺内酯片",
+    "MedSeq_赛可平",
+    "MedSeq_醋酸泼尼松",
+    "MedSeq_阿司匹林",
+    "MedSeq_阿昔洛韦",
+    "MedSeq_雷帕鸣",
+    "MedSeq_骁悉"
+  ],
+  "target_names": [
+    "Label_1m",
+    "Label_1y",
+    "Label_5y"
+  ],
+  "horizon_keys": [
+    "1m",
+    "1y",
+    "5y"
+  ],
+  "representation": "raw longitudinal values by timestep; no Latest/Mean/Max/Min/Count aggregation",
+  "max_seq_len": 256
+}

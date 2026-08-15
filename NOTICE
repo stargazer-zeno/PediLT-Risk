@@ -1,0 +1,10 @@
+PediLT-Risk
+Copyright 2026 PediLT-Risk contributors
+
+This product includes software and model integrations developed by third parties.
+The Qwen3 base model is provided by the Qwen team under the Apache License 2.0.
+XGBoost, FastAPI, React, vLLM, and other dependencies remain subject to their
+respective licenses and notices.
+
+The pediatric liver transplantation clinical data used during research are not
+included in this distribution.

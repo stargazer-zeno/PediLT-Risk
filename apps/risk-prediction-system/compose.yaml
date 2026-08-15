@@ -1,0 +1,53 @@
+name: pedilt-risk
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: ${BACKEND_IMAGE:-ghcr.io/stargazer-zeno/pedilt-risk-backend:latest}
+    environment:
+      SCHEMA_PATH: /artifacts/datasets/schema.json
+      MODEL_DIR: /artifacts/xgboost
+      JOBS_DIR: /data/jobs
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-EMPTY}
+      LLM_MODEL_NAME: ${LLM_MODEL_NAME:-zeno156/PediLT-Risk-Qwen3-4B}
+      LLM_PROMPT_MODE: ${LLM_PROMPT_MODE:-sft_pattern_prob}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-900}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.0}
+      LLM_TOP_P: ${LLM_TOP_P:-1.0}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-4096}
+      LLM_MAX_RETRIES: ${LLM_MAX_RETRIES:-3}
+      LLM_ENABLE_THINKING: ${LLM_ENABLE_THINKING:-false}
+      LLM_PATTERN_GUARD_ENABLED: ${LLM_PATTERN_GUARD_ENABLED:-true}
+      LLM_RATIONALE_SECOND_PASS: ${LLM_RATIONALE_SECOND_PASS:-true}
+      LLM_RATIONALE_MAX_TOKENS: ${LLM_RATIONALE_MAX_TOKENS:-768}
+      MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-50}
+      JOB_WORKERS: ${JOB_WORKERS:-2}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+    volumes:
+      - backend_jobs:/data/jobs
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/api/health', timeout=5).raise_for_status()"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    image: ${FRONTEND_IMAGE:-ghcr.io/stargazer-zeno/pedilt-risk-frontend:latest}
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    restart: unless-stopped
+
+volumes:
+  backend_jobs:

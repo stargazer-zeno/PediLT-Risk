@@ -1,0 +1,20 @@
+{
+  "synthetic_only": true,
+  "static_shape": [
+    142
+  ],
+  "temporal_shape": [
+    256,
+    88
+  ],
+  "time_mask_shape": [
+    256
+  ],
+  "raw_sequence_length": 3,
+  "truncated": false,
+  "xgboost_and_rsf_flat_shape": [
+    22927
+  ],
+  "flattening_order": "static + temporal.reshape(-1) + time_mask + sequence_length",
+  "identifier_used_by_preprocessing_but_not_model_input": "SYNTHETIC_PATIENT_001_node_3"
+}

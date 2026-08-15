@@ -1,0 +1,43 @@
+services:
+  backend:
+    environment:
+      LLM_BASE_URL: http://vllm:8000/v1
+      LLM_API_KEY: EMPTY
+      LLM_MODEL_NAME: zeno156/PediLT-Risk-Qwen3-4B
+    depends_on:
+      vllm:
+        condition: service_started
+
+  vllm:
+    image: ${VLLM_IMAGE:-vllm/vllm-openai:v0.10.2}
+    profiles: ["llm"]
+    ipc: host
+    environment:
+      HF_TOKEN: ${HF_TOKEN:-}
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    command:
+      - --model
+      - zeno156/PediLT-Risk-Qwen3-4B
+      - --served-model-name
+      - zeno156/PediLT-Risk-Qwen3-4B
+      - --tensor-parallel-size
+      - ${VLLM_TENSOR_PARALLEL_SIZE:-1}
+      - --max-model-len
+      - ${VLLM_MAX_MODEL_LEN:-40960}
+      - --dtype
+      - bfloat16
+      - --trust-remote-code
+    ports:
+      - "8001:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  huggingface_cache:

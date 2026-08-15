@@ -1,0 +1,48 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+
+# Runtime and private clinical data
+data/
+private_inputs/
+checkpoints/
+merged_models/
+*.jsonl
+*.log
+*.pt
+*.joblib
+*.safetensors
+*.ckpt
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Track public examples and bundled ML artifacts
+!apps/risk-prediction-system/artifacts/datasets/
+!apps/risk-prediction-system/artifacts/datasets/**
+!apps/risk-prediction-system/artifacts/xgboost/
+!apps/risk-prediction-system/artifacts/xgboost/**
+!research/llm/examples/
+!research/llm/examples/**
+!research/machine_learning/examples/
+!research/machine_learning/examples/**
