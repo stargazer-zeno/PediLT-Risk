@@ -1,0 +1,35 @@
+{
+  "study_role": "Research reproduction only. These parameters are not a deployment configuration and must not be used for clinical decision making without site-specific validation and recalibration.",
+  "method": "Platt scaling on logit(clipped_raw_probability)",
+  "formula": "sigmoid(intercept + slope * logit(clipped_raw_probability))",
+  "probability_clip": [
+    0.000001,
+    0.999999
+  ],
+  "targets": {
+    "1m": {
+      "intercept": -3.535019532409656,
+      "slope": 1.044964698600527,
+      "calibration_nodes": 29693,
+      "calibration_patients": 392,
+      "calibration_positive_nodes": 204,
+      "calibration_positive_patients": 21
+    },
+    "1y": {
+      "intercept": -2.8670117882183286,
+      "slope": 0.7006804281309549,
+      "calibration_nodes": 25762,
+      "calibration_patients": 355,
+      "calibration_positive_nodes": 572,
+      "calibration_positive_patients": 22
+    },
+    "5y": {
+      "intercept": -2.0244001782981718,
+      "slope": 0.8214084573585567,
+      "calibration_nodes": 11859,
+      "calibration_patients": 231,
+      "calibration_positive_nodes": 777,
+      "calibration_positive_patients": 22
+    }
+  }
+}

@@ -24,6 +24,11 @@ machine_learning/train/rsf/*.txt
 *.ckpt
 .env
 
+# Calibration inputs and generated patient-level outputs must remain local.
+evaluation/calibration/*.private.json
+evaluation/calibration/private_output/
+evaluation/calibration/local_output/
+
 # Python/build noise
 __pycache__/
 *.py[cod]

@@ -38,3 +38,7 @@
 python -m unittest discover -s tests -v
 python -m compileall llm machine_learning evaluation tests
 ```
+
+## 概率校准实验
+
+概率校准研究的公开代码、聚合结果和 Platt 参数位于 `evaluation/calibration/`。该模块不包含患者级数据；运行所需的授权输入和生成的中间结果必须保存在仓库外。

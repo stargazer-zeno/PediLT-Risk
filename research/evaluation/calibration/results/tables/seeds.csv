@@ -1,0 +1,10 @@
+Variant,Target,Bootstrap_Seed
+Original_uncalibrated,1m,20260824
+Platt_calibrated,1m,20260824
+Isotonic_sensitivity,1m,20260824
+Original_uncalibrated,1y,20260825
+Platt_calibrated,1y,20260825
+Isotonic_sensitivity,1y,20260825
+Original_uncalibrated,5y,20260826
+Platt_calibrated,5y,20260826
+Isotonic_sensitivity,5y,20260826

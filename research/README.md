@@ -13,7 +13,7 @@ This directory contains code, configuration templates, aggregate results, and fu
 - `llm/grpo`: GRPO training and probability reward functions.
 - `llm/inference`: OpenAI-compatible inference client.
 - `prompts`: versioned SFT, GRPO, and inference contracts.
-- `evaluation`: aggregate metrics and patient-cluster bootstrap analyses.
+- `evaluation`: aggregate metrics and patient-cluster bootstrap analyses, including the public [probability-calibration experiment](evaluation/calibration/README.md).
 - `machine_learning/examples` and `llm/examples`: explicitly synthetic public fixtures.
 
 ## Data and feature contract
@@ -47,6 +47,8 @@ The released fine-tuned model is available at [zeno156/PediLT-Risk-Qwen3-4B](htt
 ## Aggregate evaluation
 
 Authoritative aggregate tables are under `evaluation/metrics/`. Common-cohort sample sizes are 88,640 nodes for 1 month, 76,684 for 1 year, and 35,079 for 5 years. Patient-level prediction files required to recompute significance tests are private and are not distributed.
+
+The calibration study is documented in `evaluation/calibration/`. It provides aggregate results and Platt parameters for research reproduction, while all patient-level inputs and generated intermediate outputs remain outside the repository.
 
 ## Public smoke test
 

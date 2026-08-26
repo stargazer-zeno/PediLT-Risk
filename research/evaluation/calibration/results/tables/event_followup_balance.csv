@@ -1,0 +1,15 @@
+Assignment,Measure,Patient_N,Count,Fraction
+calibration,Any_death_patient,392,22,0.05612244897959184
+calibration,PositivePatient_1m,392,21,0.05357142857142857
+calibration,EligiblePatient_1m,392,392,1.0
+calibration,PositivePatient_1y,392,22,0.05612244897959184
+calibration,EligiblePatient_1y,392,355,0.9056122448979592
+calibration,PositivePatient_5y,392,22,0.05612244897959184
+calibration,EligiblePatient_5y,392,231,0.5892857142857143
+new_test,Any_death_patient,789,44,0.05576679340937896
+new_test,PositivePatient_1m,789,44,0.05576679340937896
+new_test,EligiblePatient_1m,789,789,1.0
+new_test,PositivePatient_1y,789,44,0.05576679340937896
+new_test,EligiblePatient_1y,789,715,0.9062103929024081
+new_test,PositivePatient_5y,789,44,0.05576679340937896
+new_test,EligiblePatient_5y,789,466,0.5906210392902408
