@@ -1,4 +1,4 @@
-# PediLT-Risk Prediction System
+# CareNL Prediction System
 
 [中文说明](README.zh-CN.md)
 

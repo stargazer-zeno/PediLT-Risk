@@ -1,3 +1,3 @@
-"""PediLT-Risk prediction backend package."""
+"""CareNL prediction backend package."""
 
 __version__ = "1.0.0"

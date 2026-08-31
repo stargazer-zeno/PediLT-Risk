@@ -1,6 +1,6 @@
 # Medical and research disclaimer
 
-PediLT-Risk is provided exclusively for research, education, and software demonstration. It is not a medical device, has not been validated for prospective clinical use, and must not be used as a substitute for qualified medical judgment.
+CareNL is provided exclusively for research, education, and software demonstration. It is not a medical device, has not been validated for prospective clinical use, and must not be used as a substitute for qualified medical judgment.
 
 Predictions may be inaccurate, incomplete, biased, or unavailable. Users must not rely on any output for diagnosis, treatment, triage, transplantation decisions, prognosis communication, or other individual patient care.
 

@@ -1,8 +1,8 @@
-# PediLT-Risk
+# CareNL
 
 [中文说明](README.zh-CN.md)
 
-PediLT-Risk is an open-source research project for dynamic mortality-risk prediction after pediatric liver transplantation. It contains a deployable prediction system, model artifacts, and research code for the machine-learning and large-language-model experiments.
+CareNL is an open-source research project for dynamic mortality-risk prediction after pediatric liver transplantation. It contains a deployable prediction system, model artifacts, and research code for the machine-learning and large-language-model experiments.
 
 > **Research use only.** This software is not a medical device and must not be used for diagnosis, treatment, or individual clinical decisions. See [DISCLAIMER.md](DISCLAIMER.md).
 

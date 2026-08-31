@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "If you use PediLT-Risk, please cite this software and the associated publication when available."
-title: "PediLT-Risk: Pediatric Liver Transplant Dynamic Mortality Risk Prediction"
+message: "If you use CareNL, please cite this software and the associated publication when available."
+title: "CareNL: Pediatric Liver Transplant Dynamic Mortality Risk Prediction"
 type: software
 authors:
-  - name: "PediLT-Risk contributors"
-repository-code: "https://github.com/stargazer-zeno/PediLT-Risk"
-url: "https://github.com/stargazer-zeno/PediLT-Risk"
+  - name: "CareNL contributors"
+repository-code: "https://github.com/stargazer-zeno/CareNL"
+url: "https://github.com/stargazer-zeno/CareNL"
 version: 1.0.0
 date-released: 2026-08-14
 license: Apache-2.0

@@ -141,7 +141,7 @@ export default function App() {
     <div className="app">
       <header className="hero">
         <div className="hero-copy">
-          <div className="eyebrow">PEDILT-RISK · RESEARCH DEMO</div>
+          <div className="eyebrow">CAREENL · RESEARCH DEMO</div>
           <h1>小儿肝移植死亡风险预测</h1>
           <p className="subtitle">
             结合 XGBoost 与临床大模型，评估未来 1 个月、1 年及 5 年死亡风险
@@ -316,7 +316,7 @@ export default function App() {
       </main>
 
       <footer>
-        <span>PediLT-Risk Prediction System</span>
+        <span>CareNL Prediction System</span>
         <span className="footer-divider">·</span>
         <span>仅供科研演示，不用于临床决策</span>
       </footer>

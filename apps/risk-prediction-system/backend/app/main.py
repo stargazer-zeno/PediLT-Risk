@@ -18,12 +18,12 @@ from .schemas import BatchPredictionResponse, HealthResponse, PredictionResult
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s"
 )
-LOGGER = logging.getLogger("pedilt_risk.gateway")
+LOGGER = logging.getLogger("carenl.gateway")
 
 settings = get_settings()
 
 app = FastAPI(
-    title="PediLT-Risk Prediction API",
+    title="CareNL Prediction API",
     version="1.0.0",
     description=(
         "Browser-facing gateway that standardizes follow-up data and returns "
