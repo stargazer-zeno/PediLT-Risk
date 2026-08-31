@@ -1,9 +1,9 @@
-# Prompt examples
+# Synthetic LLM examples
 
-完整的合成患者和最终消息示例位于 `llm/examples/`：
+Every file in this directory is an artificial, non-identifiable fixture for public documentation and local interface checks. None is derived from an EHR record or represents an individual patient.
 
-- `patient_raw_example.json`
-- `patient_llm_input_example.txt`
-- `inference_prompt_example.json`
+- `patient_raw_example.json`: synthetic source record following the input schema.
+- `inference_input_example.txt`: synthetic inference prompt with a longer longitudinal history.
+- `sft_example.json`: synthetic supervised fine-tuning conversation using the same schema.
 
-这些文件由 `llm/examples/generate_examples.py` 根据实际 Prompt 构建逻辑生成。
+The examples illustrate data shape and prompt contracts only. They are not clinical guidance, training data for a deployed model, or evidence for model performance.

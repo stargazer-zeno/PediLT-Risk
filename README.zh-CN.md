@@ -9,9 +9,9 @@ PediLT-Risk 是一个面向小儿肝移植术后动态死亡风险预测的开�
 ## 仓库结构
 
 - [`apps/risk-prediction-system`](apps/risk-prediction-system)：FastAPI + React 预测系统，内置三个 XGBoost 模型，可选接入 vLLM。
-- [`research`](research)：训练、推理、评估、Prompt、聚合指标和合成示例。
+- [`research`](research)：训练、推理、评估、Prompt、聚合指标和明确标注的合成示例。
 
-系统分别输出未来 1 个月、1 年和 5 年死亡风险。ML 与 LLM 两条分支独立展示，不进行加权或融合；LLM 返回的缺失概率保持为 `null`，不会使用 ML 结果回填。
+系统分别输出未来 1 个月、1 年和 5 年死亡风险。ML 与 LLM 两条分支独立展示。LLM除了输出三个时间节点的死亡风险概率外还会输出基于pattern子序列的循证分析逻辑。
 
 ## 快速部署
 

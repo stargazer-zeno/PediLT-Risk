@@ -9,9 +9,9 @@ PediLT-Risk is an open-source research project for dynamic mortality-risk predic
 ## Repository layout
 
 - [`apps/risk-prediction-system`](apps/risk-prediction-system): FastAPI + React application with bundled XGBoost models and optional vLLM integration.
-- [`research`](research): training, inference, evaluation, prompts, aggregate metrics, and synthetic examples.
+- [`research`](research): training, inference, evaluation, prompts, aggregate metrics, and explicitly labelled synthetic examples.
 
-The models estimate mortality risk at three horizons: 1 month, 1 year, and 5 years. The ML and LLM branches are reported independently; they are not averaged or fused. A missing LLM probability remains `null` and is never replaced by an ML prediction.
+The system outputs mortality risk at three horizons: 1 month, 1 year, and 5 years. The ML and LLM branches are displayed independently. In addition to mortality-risk probabilities for the three horizons, the LLM also outputs evidence-based reasoning derived from pattern subsequences.
 
 ## Quick start
 
@@ -33,7 +33,7 @@ LLM weights: [zeno156/PediLT-Risk-Qwen3-4B](https://huggingface.co/zeno156/PediL
 
 ## Data availability
 
-The source clinical records are private and are not distributed. This repository contains aggregate evaluation results and explicitly marked synthetic examples only. Reproducing the reported cohort metrics requires separately authorized access to the original data.
+The source clinical records are private and are not distributed. This repository publicly contains only aggregate evaluation results and explicitly labelled synthetic examples. Reproducing the reported cohort metrics requires separately authorized access to the original data.
 
 ## Validation
 
