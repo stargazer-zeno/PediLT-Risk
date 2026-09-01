@@ -45,7 +45,7 @@ export default function App() {
   async function handleSingle() {
     if (!jsonText.trim()) {
       setSingleNotice("");
-      setSingleError("请粘贴标准患者 JSON，或点击“载入示例”。");
+      setSingleError('Paste a standard patient JSON record or select "Load sample".');
       jsonInputRef.current?.focus();
       return;
     }
@@ -75,12 +75,12 @@ export default function App() {
       const sample = await response.json();
       setJsonText(JSON.stringify(sample, null, 2));
     } catch (e) {
-      setSingleError(`示例数据加载失败：${e.message}`);
+      setSingleError(`Unable to load the sample data: ${e.message}`);
       return;
     }
     setSingleResult(null);
     setSingleNotice(
-      "长期随访模拟样例已载入。该数据为合成数据，仅用于展示长期随访处理和模型链路，可以直接提交预测。"
+      "The synthetic long-term follow-up sample is ready. It is provided only to demonstrate longitudinal processing and the model pipeline, and can be submitted directly."
     );
     requestAnimationFrame(() => {
       jsonInputRef.current?.focus();
@@ -116,7 +116,7 @@ export default function App() {
 
   async function handleUpload() {
     if (!file) {
-      setBatchError("请先选择文件。");
+      setBatchError("Select a file before starting the prediction.");
       return;
     }
     setBatchBusy(true);
@@ -141,15 +141,16 @@ export default function App() {
     <div className="app">
       <header className="hero">
         <div className="hero-copy">
-          <div className="eyebrow">CAREENL · RESEARCH DEMO</div>
-          <h1>小儿肝移植死亡风险预测</h1>
+          <div className="eyebrow">PEDIATRIC LIVER TRANSPLANT · RESEARCH DEMO</div>
+          <h1>CareNL: Care New Liver, Care New Life</h1>
           <p className="subtitle">
-            结合 XGBoost 与临床大模型，评估未来 1 个月、1 年及 5 年死亡风险
+            Independent XGBoost and clinical LLM estimates for 1-month, 1-year, and
+            5-year mortality risk.
           </p>
           <div className="hero-tags">
-            <span>双模型并列评估</span>
-            <span>临床 Pattern 解析</span>
-            <span>批量任务支持</span>
+            <span>Parallel model estimates</span>
+            <span>Clinical pattern analysis</span>
+            <span>Batch prediction</span>
           </div>
         </div>
         <div className="hero-mark" aria-hidden="true">
@@ -165,21 +166,21 @@ export default function App() {
           <div className="section-heading">
             <div className="section-number">01</div>
             <div>
-              <h2>单患者预测</h2>
-              <p>粘贴一条标准患者 JSON，系统将同步调用 ML 与 LLM 两条预测链路。</p>
+              <h2>Single-Patient Prediction</h2>
+              <p>Paste one standard patient JSON record to run the ML and LLM pipelines independently.</p>
             </div>
           </div>
 
           <div className="editor-shell">
             <div className="editor-toolbar">
-              <span className="editor-title">患者数据 · JSON</span>
+              <span className="editor-title">Patient Data · JSON</span>
               <span className="editor-meta">
-                {jsonText.trim() ? `${jsonText.length} 字符` : "等待输入"}
+                {jsonText.trim() ? `${jsonText.length} characters` : "Waiting for input"}
               </span>
             </div>
             <textarea
               ref={jsonInputRef}
-              aria-label="患者标准 JSON"
+              aria-label="Standard patient JSON"
               value={jsonText}
               onChange={(e) => {
                 setJsonText(e.target.value);
@@ -187,7 +188,7 @@ export default function App() {
               }}
               rows={12}
               spellCheck={false}
-              placeholder={'请在此粘贴标准患者 JSON，或点击下方“载入示例”…'}
+              placeholder={'Paste a standard patient JSON record here, or select "Load sample" below...'}
             />
           </div>
 
@@ -199,14 +200,14 @@ export default function App() {
               disabled={singleBusy}
             >
               {singleBusy ? <span className="spinner" aria-hidden="true" /> : null}
-              {singleBusy ? "模型分析中…" : "提交预测"}
+              {singleBusy ? "Analyzing..." : "Run prediction"}
             </button>
             <button type="button" className="btn btn-secondary" onClick={handleLoadSample}>
-              载入长期随访模拟样例
+              Load sample
             </button>
             {jsonText && (
               <button type="button" className="btn btn-text" onClick={handleClearSingle}>
-                清空
+                Clear
               </button>
             )}
           </div>
@@ -216,8 +217,8 @@ export default function App() {
           {singleResult && (
             <div className="result-section">
               <div className="result-heading">
-                <span>预测结果</span>
-                <small>ML 与 LLM 独立输出，不做加权融合</small>
+                <span>Prediction Results</span>
+                <small>ML and LLM outputs are reported independently without weighted fusion</small>
               </div>
               <ResultsTable results={singleRows} />
             </div>
@@ -228,8 +229,8 @@ export default function App() {
           <div className="section-heading">
             <div className="section-number">02</div>
             <div>
-              <h2>批量预测</h2>
-              <p>上传患者数据文件，后台异步执行并生成可下载的结构化结果。</p>
+              <h2>Batch Prediction</h2>
+              <p>Upload a patient data file to process it asynchronously and generate downloadable structured results.</p>
             </div>
           </div>
 
@@ -244,14 +245,14 @@ export default function App() {
             />
             <span className="upload-icon" aria-hidden="true">↑</span>
             <span className="upload-copy">
-              <strong>{file ? file.name : "选择患者数据文件"}</strong>
+              <strong>{file ? file.name : "Select a patient data file"}</strong>
               <small>
                 {file
                   ? `${(file.size / 1024).toFixed(1)} KB`
-                  : "支持 JSON、JSONL、CSV、XLSX，每位患儿一条记录"}
+                  : "Supports JSON, JSONL, CSV, and XLSX, with one patient per record"}
               </small>
             </span>
-            <span className="upload-action">{file ? "重新选择" : "浏览文件"}</span>
+            <span className="upload-action">{file ? "Choose another" : "Browse files"}</span>
           </label>
 
           <div className="action-row">
@@ -262,22 +263,22 @@ export default function App() {
               disabled={batchBusy || !file}
             >
               {batchBusy ? <span className="spinner" aria-hidden="true" /> : null}
-              {batchBusy ? "正在创建任务…" : "上传并预测"}
+              {batchBusy ? "Creating job..." : "Upload and predict"}
             </button>
-            {file && <span className="selection-note">已选择：{file.name}</span>}
+            {file && <span className="selection-note">Selected: {file.name}</span>}
           </div>
 
           {job && (
             <div className="job-status">
               <div className="job-status-header">
                 <div>
-                  <span className="job-label">任务 ID</span>
+                  <span className="job-label">Job ID</span>
                   <code>{job.job_id}</code>
                 </div>
                 <span className={`job-state job-state-${job.status}`}>{job.status}</span>
               </div>
               <div className="progress-info">
-                <span>处理进度</span>
+                <span>Processing progress</span>
                 <strong>{job.completed}/{job.total}</strong>
               </div>
               <div
@@ -289,14 +290,14 @@ export default function App() {
               >
                 <span style={{ width: `${progress}%` }} />
               </div>
-              {job.failed ? <div className="failed-note">失败记录：{job.failed}</div> : null}
+              {job.failed ? <div className="failed-note">Failed records: {job.failed}</div> : null}
               {job.status === "completed" && (
                 <div className="download-row">
                   <a className="btn btn-download" href={downloadUrl(job.job_id, "csv")}>
-                    下载 CSV
+                    Download CSV
                   </a>
                   <a className="btn btn-download" href={downloadUrl(job.job_id, "json")}>
-                    下载 JSON
+                    Download JSON
                   </a>
                 </div>
               )}
@@ -306,8 +307,8 @@ export default function App() {
           {batchResults && (
             <div className="result-section">
               <div className="result-heading">
-                <span>批量预测结果</span>
-                <small>共 {batchResults.length} 条记录</small>
+                <span>Batch Prediction Results</span>
+                <small>{batchResults.length} records</small>
               </div>
               <ResultsTable results={batchResults} />
             </div>
@@ -318,7 +319,7 @@ export default function App() {
       <footer>
         <span>CareNL Prediction System</span>
         <span className="footer-divider">·</span>
-        <span>仅供科研演示，不用于临床决策</span>
+        <span>For research demonstration only. Not for clinical decision-making.</span>
       </footer>
     </div>
   );

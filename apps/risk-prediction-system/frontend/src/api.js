@@ -10,7 +10,7 @@ async function asJson(resp) {
     data = { detail: text };
   }
   if (!resp.ok) {
-    throw new Error(data.detail || `请求失败 (${resp.status})`);
+    throw new Error(data.detail || `Request failed (${resp.status})`);
   }
   return data;
 }

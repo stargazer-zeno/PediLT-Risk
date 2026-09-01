@@ -10,21 +10,21 @@ export default function HealthBar({ health, error, onRefresh }) {
   return (
     <div className="healthbar">
       <div className="health-item">
-        <Dot ok={!!health && !error} /> 后端 Backend
+        <Dot ok={!!health && !error} /> Backend
       </div>
       <div className="health-item">
         <Dot ok={!!ml.available} /> XGBoost ML
-        {ml.error && <span className="health-note" title={ml.error}>（不可用）</span>}
+        {ml.error && <span className="health-note" title={ml.error}>(Unavailable)</span>}
       </div>
       <div className="health-item">
         <Dot ok={!!llm.enabled} /> LLM
-        {!llm.enabled && <span className="health-note">（未配置）</span>}
+        {!llm.enabled && <span className="health-note">(Not configured)</span>}
         {llm.enabled && llm.reachable === false && (
-          <span className="health-note">（不可达）</span>
+          <span className="health-note">(Unreachable)</span>
         )}
       </div>
       <button className="btn-small" onClick={onRefresh}>
-        刷新状态
+        Refresh status
       </button>
       {error && <span className="health-error">{error}</span>}
     </div>

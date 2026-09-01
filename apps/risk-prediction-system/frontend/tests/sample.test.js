@@ -67,6 +67,6 @@ test("frontend loads the long-followup demo and retains the short synthetic samp
   const shortSample = JSON.parse(readFileSync(shortSampleUrl, "utf8"));
 
   assert.match(appSource, /SAMPLE_URL = "\/samples\/demo_long_followup\.json"/);
-  assert.match(appSource, /\u8f7d\u5165\u957f\u671f\u968f\u8bbf\u6a21\u62df\u6837\u4f8b/);
+  assert.match(appSource, /Load sample/);
   assert.equal(shortSample.id, "demo_full_probability");
 });

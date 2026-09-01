@@ -34,15 +34,15 @@ export default function ResultsTable({ results }) {
               <th colSpan="5">LLM / vLLM</th>
             </tr>
             <tr>
-              <th>状态</th>
-              <th>1月</th>
-              <th>1年</th>
-              <th>5年</th>
-              <th>状态</th>
-              <th>1月</th>
-              <th>1年</th>
-              <th>5年</th>
-              <th>Pattern数</th>
+              <th>Status</th>
+              <th>1 Month</th>
+              <th>1 Year</th>
+              <th>5 Years</th>
+              <th>Status</th>
+              <th>1 Month</th>
+              <th>1 Year</th>
+              <th>5 Years</th>
+              <th>Pattern Count</th>
             </tr>
           </thead>
           <tbody>
@@ -72,14 +72,14 @@ export default function ResultsTable({ results }) {
           <section className="llm-detail-card" key={`${r.id || i}-llm-detail`}>
             <div className="llm-detail-header">
               <div>
-                <span className="detail-label">LLM 临床模式</span>
+                <span className="detail-label">LLM Clinical Patterns</span>
                 <span className="id-col">{r.id || `row_${i + 1}`}</span>
               </div>
               <div className="detail-statuses">
                 <StatusTag status={r.llm?.status} />
                 {r.llm?.parse_status && (
                   <span className="parse-status">
-                    解析：{r.llm.parse_status}
+                    Parse status: {r.llm.parse_status}
                   </span>
                 )}
               </div>
@@ -91,10 +91,10 @@ export default function ResultsTable({ results }) {
                   <div className="pattern-item" key={`${r.id || i}-pattern-${idx}`}>
                     <div className="pattern-index">Pattern {idx + 1}</div>
                     <div className="pattern-content">
-                      <div className="pattern-title">{item.pattern || "未提供模式名称"}</div>
+                      <div className="pattern-title">{item.pattern || "Pattern name unavailable"}</div>
                       {item.analysis && (
                         <div className="pattern-analysis">
-                          <span className="analysis-label">临床分析</span>
+                          <span className="analysis-label">Clinical Analysis</span>
                           {item.analysis}
                         </div>
                       )}
@@ -110,18 +110,18 @@ export default function ResultsTable({ results }) {
 
             {rationale && (
               <div className="answer-text">
-                <strong>总体原因：</strong>
+                <strong>Overall Rationale:</strong>
                 <span>{rationale}</span>
               </div>
             )}
 
             {r.llm?.parse_warnings?.length > 0 && (
               <div className="warnings">
-                <strong>解析警告：</strong>{r.llm.parse_warnings.join("；")}
+                <strong>Parse Warnings:</strong>{r.llm.parse_warnings.join("; ")}
               </div>
             )}
 
-            {r.llm?.error && <div className="error">LLM错误：{r.llm.error}</div>}
+            {r.llm?.error && <div className="error">LLM Error: {r.llm.error}</div>}
           </section>
           );
         })}
